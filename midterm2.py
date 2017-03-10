@@ -237,3 +237,19 @@ def simplify(ast):
 
     # none of the simplifications applied, so just return the simplified subtrees
     return (st1, op, st2)
+
+#########################################
+# functions you might find useful
+#########################################
+
+# You never need to use any of these, but you can
+def map(f, l):
+    newL = []
+    for x in l:
+        newL += [f(x)]
+    return newL
+
+def fold(f, init, l):
+    for x in l:
+        init = f(init, x)
+    return init
